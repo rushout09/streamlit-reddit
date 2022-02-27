@@ -18,7 +18,8 @@ class CreateNote:
             doc_ref = self.db.collection("users").document('PZTEmq3SyocK4x00QwB1').collection('record')
             doc_ref.add({
                 'note': self.note,
-                'tags': list_of_tags
+                'tags': list_of_tags,
+                'modifiedAt': firestore.SERVER_TIMESTAMP
             })
             st.session_state["note"] = ""
             st.session_state["tags"] = ""

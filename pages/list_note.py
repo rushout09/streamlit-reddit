@@ -22,7 +22,8 @@ class ListNote:
         print(f"List of tags: {list_of_tags}")
         doc_ref = self.db.collection("users").document('PZTEmq3SyocK4x00QwB1').collection('record')
         if len(list_of_tags) > 0:
-            st.session_state['results'] = doc_ref.where('tags', 'array_contains_any', list_of_tags).stream()
+            st.session_state['results'] = doc_ref.where('tags', 'array_contains_any', list_of_tags)\
+                .order_by('modifiedAt', direction='DESCENDING').stream()
 
 
 # collection_ref = db.collection("users").document('PZTEmq3SyocK4x00QwB1').collection('record')
