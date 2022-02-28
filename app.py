@@ -4,6 +4,8 @@ from pages import create_note, list_note
 
 app = MultiPage()
 
+st.set_page_config(layout="wide")
+
 st.title('Zone App')
 
 app.add_page("Create Note", create_note.CreateNote)

@@ -7,7 +7,7 @@ class CreateNote:
     def __init__(self):
         self.db = firestore.Client.from_service_account_json(
     "./zone-3d684-firebase-adminsdk-z4pdn-9b6f2ac6d7.json")
-        self.note = st.text_input("Write a note", key="note")
+        self.note = st.text_area("Write a note", key="note")
         self.tags = st.text_input("Enter Tags separated by space", key="tags")
         self.submit = st.button(label="Submit", on_click=self.post_note)
 
